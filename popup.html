@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+body {
+    margin: 0;
+    padding: 14px;
+    width: 220px;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.switch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* toggle estilo AdBlock */
+.toggle {
+    position: relative;
+    width: 42px;
+    height: 22px;
+}
+
+.toggle input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 22px;
+    top: 0; left: 0; right: 0; bottom: 0;
+    transition: .2s;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 2px;
+    bottom: 2px;
+    background: white;
+    border-radius: 50%;
+    transition: .2s;
+}
+
+input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.status {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 8px;
+    color: #555;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<div class="title">Colar Notas</div>
+
+<div class="switch">
+    <span>Ativar</span>
+
+    <label class="toggle">
+        <input type="checkbox" id="toggle">
+        <span class="slider"></span>
+    </label>
+</div>
+
+<div class="status" id="status">Desativado</div>
+
+</div>
+
+<script src="popup.js"></script>
+</body>
+</html>
