@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Colar Notas em Bloco",
-  "version": "1.1",
+  "version": "1.2",
   "description": "Cola notas da planilha em bloco em campos de nota.",
 
   "permissions": ["storage"],
@@ -15,6 +15,12 @@
       "matches": ["<all_urls>"],
       "js": ["content.js"],
       "run_at": "document_idle"
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": ["page.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
     }
   ]
 }
